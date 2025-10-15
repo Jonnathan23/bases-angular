@@ -1,0 +1,22 @@
+{
+    // Desactiva que VSCode detecte indentación automáticamente
+    "editor.detectIndentation": false,
+    // Para todos los archivos:
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    // (Opcional) Formatear al guardar
+    "editor.formatOnSave": true,
+    // Si quieres reglas específicas por lenguaje:
+    "[javascript]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
+    "[typescript]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
+    "[typescriptreact]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    }
+}
