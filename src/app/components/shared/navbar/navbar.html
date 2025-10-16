@@ -1,0 +1,25 @@
+<style>
+    nav {
+        display: flex;
+        justify-content: space-around;
+        background-color: #212121;
+        padding: 10px;
+        color: white;
+    }
+
+    nav a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+    }
+
+    /**   Importante: en angular hay que hacer extremo uso de la especificidad debido a
+     que angular no logra poseer el contexto suficienta para entender que estilos se deben aplicar */
+    nav a.active {
+        color: rgb(231, 92, 80);
+    }
+</style>
+
+<nav>
+    <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="">Contador</a>
+    <a routerLinkActive="active" routerLink="/hero">Hero</a>
+</nav>
