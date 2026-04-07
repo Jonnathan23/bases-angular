@@ -18,5 +18,11 @@
     "[typescriptreact]": {
         "editor.insertSpaces": true,
         "editor.tabSize": 4
+    },
+    "angular-schematics.schematicsDefaultOptions": {
+        "angular-*": {
+            "externalTemplate": true,
+            "skipStyle": true
+        }
     }
 }

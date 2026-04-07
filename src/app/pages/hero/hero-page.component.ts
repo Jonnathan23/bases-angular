@@ -1,4 +1,4 @@
-import { UpperCasePipe } from "@angular/common";
+import { UpperCasePipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, signal } from "@angular/core";
 
 @Component({
@@ -13,8 +13,7 @@ export class HeroPageComponent {
     name = signal(this.initialName)
     age = signal(this.initialAge)
 
-    heroDescription = computed(() => {
-        // Se puede desarrollar logica
+    heroDescription = computed(() => {        
         const description = `${this.name()} - ${this.age()}`;
         return description;
     })
