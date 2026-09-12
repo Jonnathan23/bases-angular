@@ -1,0 +1,19 @@
+# Dependencias
+node_modules/
+
+# Compilación y Caché del CLI de Angular
+dist/
+.angular/
+out-tsc/
+
+# Reportes de pruebas (Karma/Jasmine/Jest)
+coverage/
+
+# Archivos de bloqueo de paquetes (evita diffs masivos o conflictos)
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+bun.lockb
+
+# Configuraciones base que no necesitan el formato de Prettier
+.editorconfig

@@ -1,37 +1,34 @@
-import { ChangeDetectionStrategy, Component, signal } from "@angular/core";
-import { consumerPollProducersForChange } from "@angular/core/primitives/signals";
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 
 @Component({
-    templateUrl: './counter-page.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  templateUrl: './counter-page.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CounterPageComponent {
-    originalValue = 0;
-    counter = 10;
-    counterSignal = signal(10)
+  public originalValue = 0;
+  public counter = 10;
+  public counterSignal = signal(10);
 
-    constructor() {
-        setInterval(() => {
-            this.counter += 1; //Solo se actualiza la vista si ZoneJS detecta una actualización --> es más pesado
-            this.counterSignal.update((current) => current + 1); // se actualiza debido a que en ChangeDetectionStrategy.OnPush --> más ligero
-            console.log('TICK');
-        }, 2000)
+  public constructor() {
+    setInterval(() => {
+      this.counter += 1; //Solo se actualiza la vista si ZoneJS detecta una actualización --> es más pesado
+      this.counterSignal.update((current) => current + 1); // se actualiza debido a que en ChangeDetectionStrategy.OnPush --> más ligero
+      console.log('TICK');
+    }, 2000);
+  }
 
-    }
+  public increaseBy(value: number): void {
+    this.counter += value;
+    this.counterSignal.update((current) => current + value);
+  }
 
-    increaseBy(value: number) {
-        this.counter += value;
-        this.counterSignal.update((current) => current + value);
-    }
+  public decreseBy(value: number): void {
+    this.counter -= value;
+    this.counterSignal.update((current) => current - value);
+  }
 
-    decreseBy(value: number) {
-        this.counter -= value;
-        this.counterSignal.update((current) => current - value);
-    }
-
-    reset() {
-        this.counter = this.originalValue;
-        this.counterSignal.set(this.originalValue);
-    }
-
+  public reset(): void {
+    this.counter = this.originalValue;
+    this.counterSignal.set(this.originalValue);
+  }
 }

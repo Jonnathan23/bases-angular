@@ -1,10 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+import { NavBarComponent } from 'src/app/components/shared/nav-bar/nav-bar.component';
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',  
+  imports: [RouterOutlet, NavBarComponent],
+  templateUrl: './app.html',
 })
 export class App {
   protected readonly title = signal('bases');

@@ -8,20 +8,17 @@
   <dd>{{ age() }}</dd>
 
   <td>Método:</td>
-  <dd>{{ getHeroDescription() }}</dd>   
-  <dd>{{ heroDescription() }}</dd>   
+  <dd>{{ getHeroDescription() }}</dd>
+  <dd>{{ heroDescription() }}</dd>
 
   <td>Capitalizado:</td>
 
   <!-- 'Mostrar nombre TODO EN MAYÚSCULAS' pero sin afectar a la data-->
-   <dd>{{ name() | uppercase }}</dd>   
+  <dd>{{ name() | uppercase }}</dd>
 </dl>
 
-<button (click)="changeHero()" class="btn btn-primary mx-2">
-  Cambiar nombre
-</button>
+<button (click)="changeHero()" class="btn btn-primary mx-2">Cambiar nombre</button>
 
 <button (click)="chageAge()" class="btn btn-primary">Cambiar edad</button>
 
 <button (click)="resetForm()" class="btn btn-primary mx-2">Reset</button>
-tarea-01.md

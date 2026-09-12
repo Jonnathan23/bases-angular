@@ -1,39 +1,37 @@
-import { UpperCasePipe } from "@angular/common";
-import { ChangeDetectionStrategy, Component, computed, signal } from "@angular/core";
+import { UpperCasePipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
 
 @Component({
-    templateUrl: './hero-page.component.html',
-    imports: [UpperCasePipe],
-    changeDetection: ChangeDetectionStrategy.OnPush
+  templateUrl: './hero-page.component.html',
+  imports: [UpperCasePipe],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeroPageComponent {
-    initialName = 'Ironman'
-    initialAge = 45
+  public initialName = 'Ironman';
+  public initialAge = 45;
 
-    name = signal(this.initialName)
-    age = signal(this.initialAge)
+  public name = signal(this.initialName);
+  public age = signal(this.initialAge);
 
-    heroDescription = computed(() => {
-        // Se puede desarrollar logica
-        const description = `${this.name()} - ${this.age()}`;
-        return description;
-    })
+  public heroDescription = computed(() => {
+    // Se puede desarrollar logica
+    const description = `${this.name()} - ${this.age()}`;
+    return description;
+  });
 
-    capitalizedName = computed(() => this.name().toUpperCase())
+  public capitalizedName = computed(() => this.name().toUpperCase());
 
-    getHeroDescription = () => `${this.name()} - ${this.age()}`
+  public getHeroDescription = (): string => `${this.name()} - ${this.age()}`;
 
-    chageAge = () => this.age.set(60)
+  public chageAge = (): void => this.age.set(60);
 
-    changeHero = () => {
-        this.age.set(22)
-        this.name.set('Spiderman')
-    }
+  public changeHero = (): void => {
+    this.age.set(22);
+    this.name.set('Spiderman');
+  };
 
-    resetForm = (): void => {
-        this.name.set(this.initialName)
-        this.age.set(this.initialAge)
-    }
-
-
+  public resetForm = (): void => {
+    this.name.set(this.initialName);
+    this.age.set(this.initialAge);
+  };
 }
